@@ -1,5 +1,5 @@
 "use strict";
 
-// just pass through Franz
+// just pass through Ferdi
 
-module.exports = Franz => Franz;
+module.exports = Ferdi => Ferdi;
