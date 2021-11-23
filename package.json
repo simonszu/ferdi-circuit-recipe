@@ -1,12 +1,8 @@
 {
-  "id": "circuit-eu",
-  "name": "Circuit EU",
-  "version": "0.1",
-  "description": "Circuit by Unify",
-  "main": "index.js",
-  "author": "Simon Szustkowski <mail@simonszu.de>",
+  "id": "circuit",
+  "name": "Circuit",
+  "version": "0.0.1",
   "license": "MIT",
-  "repository": "https://github.com/simonszu/ferdi-circuit-recipe",
   "config": {
     "serviceURL": "https://eu.yourcircuit.com/"
   }
