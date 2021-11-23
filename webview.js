@@ -2,27 +2,22 @@
 
 module.exports = Ferdi => {
   const getMessages = function getMessages() {
+    // Initialize empty vars
     var unread = 0;
-    // title is like (2) Circuit where 2 is the number of unread messages, if any
-    // if there is no unread message, title is only 'Circuit'
-    // we need to extract the title value and do some regex stuff
-    // regex is '\((\d+)\) Circuit'#
-
-    // Get value of <title> tag 
+    var match = [];
+    // Get value of <title> tag where in case of new messages the number of messages appear
     const titleValue = document.querySelector('title').text;
-
-    // Define Regex
-    const regEx = new RegExp("\((\d+)\) Circuit"); 
-
-    
-    match = regEx.exec(titleValue);
-    if (match.length != 0) {
+    // Extract the number from the tag
+    match = titleValue.match(/\d+/);
+    // Some logic to handle the match groups
+    if (match != null && match.length != 0) {
       unread = match[0];
+    } else {
+      unread = 0;
     }
+    // Set unread msgs badge
     Ferdi.setBadge(parseInt(unread, 10));
   };
-
-
 
   const loopFunc = () => {
     getMessages();
