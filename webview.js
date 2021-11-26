@@ -10,11 +10,7 @@ module.exports = Ferdi => {
     // Extract the number from the tag
     match = titleValue.match(/\d+/);
     // Some logic to handle the match groups
-    if (match != null && match.length != 0) {
-      unread = match[0];
-    } else {
-      unread = 0;
-    }
+    unread = match != null && match.length > 0 ? match[0] : 0;
     // Set unread msgs badge
     Ferdi.setBadge(parseInt(unread, 10));
   };
